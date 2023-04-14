@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+times=1
+x=1
+while [ $x -eq 1 ]
+do
+n=$(( RANDOM % 100 ))
+if [[ n -eq 42 ]]; then
+echo "Something went wrong"
+>&2 echo "The error was using magic numbers"
+echo $times runs it took for the script to fail.
+break
+fi
+echo "Everything went according to plan"
+times=$(( $times + 1 ))
+done
